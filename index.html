@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CRUXLY AI</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background:rgba(22, 11, 37, 0.992);
+      color: white;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+      position: sticky;
+    }
+   * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Header styling */
+        header {
+            background-color: #000000;
+            color: white;
+            font-size: larger;
+            font-weight: 1000;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 2.5rem 3.5rem;
+            position:sticky;
+            top:0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+           height: 100px;
+        }
+
+        /* Navigation styling */
+        nav ul {
+            display: flex;
+            list-style-type: none;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: #3d3dc8;
+        }
+
+        /* Optional: Add underline effect on hover */
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #3d3dc8;
+            transition: width 0.3s ease;
+        }
+        nav a:hover::after {
+            width: 100%;
+        }
+
+
+  
+    .logo-section {
+      flex-grow: 0;
+    }
+    .hero {
+      max-width: 1200px;
+      margin: 2rem auto 4rem auto;
+      padding: 0 1rem;
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 900;
+      margin-bottom: 0.3rem;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      opacity: 1;
+      margin-top: 0;
+    }
+.azeem{
+  color: #ff0000;
+}
+    /* sum section */
+
+    .summ-section{
+      margin-top: 1rem;
+      
+    }
+    .features-section {
+      background: white;
+      color: #111827;
+      padding: 5rem 1rem 10rem 1rem;
+      max-width: 1200px;
+      margin: auto;
+      border-radius: 12px;
+      box-shadow: 0 6px 25px rgb(0 0 0 / 0.1);
+    }
+   
+    .features-section h2 {
+      text-align: center;
+      font-size: 2.4rem;
+      margin-bottom: 2rem;
+      font-weight: 700;
+      color: #111827;
+    }
+    .create-space{
+      margin-top: 5%;
+    }
+    .features-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.5rem;
+      padding: 0 1rem;
+    }
+    .feature {
+      background:#dde3f1;
+      padding: 2rem 1.5rem;
+      border-radius: 12px;
+      margin-top: 1rem;
+      box-shadow: 0 4px 12px rgb(0 0 0 / 0.05);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+/* summ-section */
+   .butt-summ{
+    display: flex;
+    color: rgb(233, 226, 226);
+    background-color:rgba(60, 48, 76, 0.992);
+    padding: 1rem 1.5rem;
+    
+    margin-left: 62rem;
+    border-radius: 1rem;
+    box-shadow:1.5px 1.5px #141312;
+    font-weight: 500;
+     
+     
+   }
+
+   .butt-summ:hover{
+    background-color: var(--primary);
+    box-shadow:2px 2px rgb(146, 28, 28);
+    transform: translateY(-3px);
+   }
+   
+   .url-paste{
+    margin-block-start: -2.7rem;
+    margin-left: 1rem;
+    display: flex;
+    outline: auto;
+    width: 950px;
+    padding: 5px 7px;
+    
+  }
+  .try-sample{
+    color: gray;
+    margin-left: 1rem;
+  }
+  .select-l{
+    outline: auto;
+    color:black;
+    
+  }
+ /* mt-1 block w-full pl-3 pr-10 py-2 text-base border border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-lg  */
+  
+   .feature-summ{
+    display: grid;
+    width:5%;
+    margin-left: 31.5rem;
+   }
+
+
+     .feature:hover {
+            background-color: var(--primary);
+            color: var(--light);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 32px rgb(146, 28, 28);
+
+            
+        }
+
+    span{
+      color:rgba(21, 125, 199, 0.562); ;
+    }
+    .feature img {
+      width: 100px;
+      height: 100px;
+      border-radius: 20px;
+      object-fit: cover;
+      margin-bottom: 1.5rem;
+    }
+    .feature h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      text-align: center;
+    }
+    .feature p {
+      font-size: 1rem;
+      text-align: center;
+      line-height: 1.4;
+    }
+
+    /* contact section */
+    .contact-card {
+            background-color: var(--light);
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgb(250, 249, 249);
+            width: 100%;
+            max-width: 1000px;
+            display: flex;
+            flex-direction:column;
+            margin-left: 15.5rem;
+            overflow: hidden;
+            
+            margin-top: 5%; 
+        }
+       .contact-header {
+            background: linear-gradient(135deg, var(--primary), #8a63ff);
+            color:var(--light);
+            padding: 30px;
+            text-align:center;
+        }
+
+        .contact-header h1 {
+            
+            font-size: 2.4rem;
+            font-weight:700;
+            margin-bottom: 7px;
+        }
+        .contact-header p {
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .contact-content {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+            padding: 30px;
+            background-color: var(--light);
+        }
+
+        .contact-info h2 {
+            color: var(--dark);
+            margin-bottom: 20px;
+            font-weight: 650;
+            font-size: 1.5rem;
+        }
+        .info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+        .info-icon {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(108, 99, 255, 0.1);
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 15px;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+        
+        .info-text h3 {
+            font-size: 1rem;
+            margin-bottom: 2px;
+            font-weight: 600;
+        }
+        
+        .info-text p, .info-text a {
+            color: var(--gray);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+        .info-text a:hover {
+            color: var(--primary);
+        }
+
+        .info-text p:hover {
+            color: var(--primary);
+        }
+
+
+        
+        .social-links {
+            margin-top: 40px;
+        }
+        
+        .social-icons {
+            display: flex;
+            margin-top: 20px;
+        }
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(108, 99, 255, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 15px;
+            color: var(--primary);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        .social-icon:hover {
+            background-color: var(--primary);
+            color: var(--light);
+            transform: translateY(-3px);
+        }
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+             --primary: #030303;
+            --secondary: #f5f5f7;
+            --dark: #1e1e1e;
+            --light: #ffffff;
+            --gray: #8e8e8e;
+        }
+
+
+    footer {
+      background: #111827;
+      color: #d1d5db;
+      text-align: center;
+      padding: 1.5rem 1rem;
+      margin-top: 5rem;
+      font-size: 0.9rem;
+    }
+    @media (max-width: 640px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      nav {
+        
+        gap: 1rem;
+      }
+    }
+
+    
+  </style>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<body>
+  <header>
+        <div class="brand">
+            <div class="brand-icon"></div>
+           
+              <h1><span>C</span>RUXLY AI</h1>
+              <p>FOUNDER & CEO <span class="azeem">AZEEM</span></p>
+            
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Feature</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+  <main class="hero" id="home" role="main" aria-label="Main content">
+    <section>
+      <h1>Transform lengthy articles into concise summaries</h1>
+      <p>Boost your productivity and save time by understanding key points instantly with AI-powered summarization.</p>
+    </section>
+    <!-- SUMMARISE SECTION -->
+   <div class="summ-section">
+     <section class="features-section" id="home" aria-label="Features of AI Article Summarizer">
+    <h2>Summarizer</h2>
+      <div>
+      <button class="butt-summ">Summarize</button>
+      <input type="url" id="articleUrl" placeholder="https://example.com/article" class="url-paste">
+      <div class="try-sample">
+                        Try sample: 
+                        <a href="#" class="sample-url text-blue-600 hover:underline" data-url="https://en.wikipedia.org/wiki/Artificial_intelligence">AI Article</a>, 
+                        <a href="#" class="sample-url text-blue-600 hover:underline" data-url="https://www.nytimes.com/">News</a>, 
+                        <a href="#" class="sample-url text-blue-600 hover:underline" data-url="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5912236/">Research Paper</a>
+                    </div>
+
+                    <div class="features-list">
+                        <div class="feature">
+                                 <label class="block text-lg font-medium text-black-700 mb-2">Summary Mode</label>
+                            <div class="space-y-2">
+                                  <div class="flex items-center">
+                                        <input id="extractive" name="summaryMode" type="radio" class="h-4 w-4 text-blue-600 focus:ring-blue-500" checked>
+                                         <label for="extractive" class="ml-3 block text-sm font-medium text-black-700">
+                                          Extractive <span class="text-gray-500">(Key sentences)</span>
+                                          </label>
+                                  </div>
+                                  <div class="flex items-center">
+                                        <input id="abstractive" name="summaryMode" type="radio" class="h-4 w-4 text-blue-600 focus:ring-blue-500">
+                                        <label for="abstractive" class="ml-3 block text-sm font-medium text-black-700">
+                                        Abstractive <span class="text-gray-500">(AI rewritten)</span>
+                                        </label>
+                                  </div>
+                            </div>
+                       </div>
+                       <div class="feature">
+                        <label class="block text-lg font-medium text-black-700 mb-2">Summary Length</label>
+                        <select id="summaryLength" class="select-l">
+                          
+                            <option value="70">Brief (0-70 words)</option>
+                            <option value="100" selected>Short (0-100 words)</option>
+                            <option value="130">Medium (0-130 words)</option>
+                            <option value="150">Detailed (0-150 words)</option>
+                            <option value="180">Comprehensive (0-180 words)</option>
+                            <option value="200">Full (0-200 words)</option>
+                        </select>
+                    </div>
+                    </div>  
+                    
+                    <div class="features-list">
+                      <div class="feature">
+                        <label class="block text-lg font-medium text-black-700 mb-2">Output Format</label>
+                        <div class="space-y-2">
+                            <div class="flex items-center">
+                                <input id="paragraph" name="outputFormat" type="radio" class="h-4 w-4 text-blue-600 focus:ring-blue-500" checked>
+                                <label for="paragraph" class="ml-3 block text-sm font-medium text-black-700">Paragraph</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="bullets" name="outputFormat" type="radio" class="h-4 w-4 text-blue-600 focus:ring-blue-500">
+                                <label for="bullets" class="ml-3 block text-sm font-medium text-black-700">Bullet Points</label>
+                            </div>
+                        </div>
+                    </div> 
+                    <div class="feature">
+                        <label class="block text-lg font-medium text-black-700 mb-2">Additional Options</label>
+                        <div class="space-y-2">
+                            <div class="flex items-center">
+                                <input id="showKeywords" type="checkbox" class="h-4 w-4 text-blue-600 focus:ring-blue-500 rounded">
+                                <label for="showKeywords" class="ml-3 block text-sm font-medium text-black-700">Extract Keywords</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="showStats" type="checkbox" class="h-4 w-4 text-blue-600 focus:ring-blue-500 rounded" checked>
+                                <label for="showStats" class="ml-3 block text-sm font-medium text-black-700">Show Reading Stats</label>
+                            </div>
+                        </div>
+                    </div>
+                    </div>        
+      
+      </div>
+      </section>
+   </div>
+  </main>
+
+
+<!-- feature section -->
+  <div>
+    <section class="features-section" id="features" aria-label="Features of AI Article Summarizer">
+    <h2>Features</h2>
+    <div class="features-list">
+      <article class="feature" tabindex="0" aria-labelledby="feature1-title" aria-describedby="feature1-desc">
+        <img src="images/NLP.webp" alt="Illustration showing artificial intelligence brain icon glowing with circuits and digital particles">
+        <h3 id="feature1-title">Advanced NLP Algorithms</h3>
+        <p id="feature1-desc">Powered by state-of-the-art natural language processing technology to produce precise and coherent summaries.</p>
+      </article>
+
+      <article class="feature" tabindex="0" aria-labelledby="feature2-title" aria-describedby="feature2-desc">
+        <img src="images/fast&efficient.webp" alt="Graphic showing stopwatch with speed lines representing fast summary generation"/>
+        <h3 id="feature2-title">Fast & Efficient</h3>
+        <p id="feature2-desc">Get instant summaries of lengthy articles or documents without sacrificing accuracy or context.</p>
+      </article>
+
+      <article class="feature" tabindex="0" aria-labelledby="feature3-title" aria-describedby="feature3-desc">
+        <img src="images/multiple.webp" alt="Icon representing multiple document formats including text, pdf, and webpages">
+        <h3 id="feature3-title">Supports Multiple Formats</h3>
+        <p id="feature3-desc">Summarizes from web articles, PDFs, and various text files to fit all your content needs seamlessly.</p>
+      </article>
+
+      
+    </div>
+  </section>
+  </div>
+    
+  <!-- pricing section -->
+  <div class="create-space">
+    <section class="features-section" id="pricing" aria-label="Pricing plans">
+    <h2>Pricing</h2>
+    <div class="features-list" style="color: #111827;">
+      <article class="feature" tabindex="0" aria-labelledby="plan-basic" aria-describedby="desc-basic">
+        <img src="images/basiicplan.webp" alt="icon representing basic plan">
+        <h3 id="plan-basic">Basic</h3>
+        <p id="desc-basic">Free - Limited usage for casual users, up to 5 articles summarized per week.</p>
+      </article>
+      <article class="feature" tabindex="0" aria-labelledby="plan-pro" aria-describedby="desc-pro">
+        <img src="images/prplan.webp" alt="icon representing pro plan">
+        <h3 id="plan-pro">Pro</h3>
+        <p id="desc-pro">$4/month - Unlimited article summarization, priority processing, and advanced features.</p>
+      </article>
+      <article class="feature" tabindex="0" aria-labelledby="plan-enterprise" aria-describedby="desc-enterprise">
+        <img src="images/Sales Enterprise.webp" alt="icon representing enterprise plan">
+        <h3 id="plan-enterprise">Enterprise</h3>
+        <p id="desc-enterprise">Contact us for custom solutions designed for teams and organizations with large-scale needs.</p>
+      </article>
+    </div>
+  </section>
+  </div>
+      
+  <!-- contact section -->
+  
+     <div class="contact-card" id="contact">
+      <div class="contact-header">
+        <h1>Get in Touch</h1>
+        <p>Feel free to reach out for collaboration or just a freindly hello</p>
+      </div>
+      
+  <div class="contact-content">
+    <div class="contact-info">
+    <h2>Contact Information</h2>
+     <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="info-text">
+                        <h3>Email</h3>
+                        <a href="mailto:yadavrajendrayadav19999@gmail.com">yadavrajendrayadav19999@gmail.com</a><br>
+                    </div>
+                </div>
+
+                 <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="info-text">
+                        <h3>Phone</h3>
+                        <p>+91 7668341151</p>
+                    </div>
+                </div>
+
+                 <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="info-text">
+                        <h3>Location</h3>
+                        <p>Ghaziabad,India</p>
+                    </div>
+                </div>
+
+
+                <div class="social-links">
+                    <h2>Connect With Me</h2>
+                    <div class="social-icons">
+                        <a href="https://github.com/" class="social-icon" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/" class="social-icon" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://instagram.com/" class="social-icon" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://facebook.com/" class="social-icon" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://twitter.com/" class="social-icon" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+
+
+    </div>
+
+  </div>    
+
+     </div>
+      <script>
+        // Animation for social icons on hover
+        document.querySelectorAll('.social-icon').forEach(icon => {
+            icon.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+            });
+            
+            icon.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>  
+  <footer>
+    <p>©️ 2025 CRUXLY AI. All rights reserved.</p>
+    <p>Made by <span>RAJENDRA YADAV</span></p>
+  </footer>
+
+</body>
+</html>
